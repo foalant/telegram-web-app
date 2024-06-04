@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.4); /* Увеличена прозрачность */
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -24,19 +24,19 @@ body {
     justify-content: flex-start;
     align-items: center;
     position: absolute;
-    top: 0; /* Растягиваем на весь экран */
+    top: 0;
 }
 
 h1 {
-    font-size: 3em; /* Увеличен размер шрифта */
-    margin-top: 20px; /* Поднята надпись выше */
+    font-size: 3em;
+    margin-top: 10px; /* Поднята надпись выше */
     color: #333;
-    font-family: 'Verdana', sans-serif; /* Более привлекательный шрифт */
+    font-family: 'Verdana', sans-serif;
 }
 
 #coinCount {
-    font-size: 2.5em; /* Увеличен размер шрифта */
-    margin-top: 60px; /* Опущена надпись ниже */
+    font-size: 2.5em;
+    margin-top: 20px; /* Поднята надпись пропорционально */
     margin-bottom: 20px;
     color: #333;
 }
@@ -45,8 +45,8 @@ h1 {
     width: 200px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.05s; /* Быстрее обрабатывает нажатие */
-    margin-top: auto; /* Опущена иконка ниже */
+    transition: transform 0.05s;
+    margin-top: 20px; /* Поднята иконка выше */
 }
 
 #clickerImage:active {
