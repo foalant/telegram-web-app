@@ -47,7 +47,7 @@ h1 {
     cursor: pointer;
     transition: transform 0.05s;
     position: absolute;
-    bottom: 15%; /* Центр картинки на середине нижней половины экрана */
+    bottom: 10%; /* Центр картинки на середине нижней половины экрана */
 }
 
 #clickerImage:active {
