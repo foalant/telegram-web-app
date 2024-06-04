@@ -4,7 +4,7 @@ let clicks = localStorage.getItem('clicks') ? parseInt(localStorage.getItem('cli
 const resetTime = 24 * 60 * 60 * 1000; // 24 часа в миллисекундах
 let lastClickTime = localStorage.getItem('lastClickTime') ? parseInt(localStorage.getItem('lastClickTime')) : Date.now();
 
-document.getElementById('coinCount').innerText = 'Coins: ' + coins;
+document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
 
 function collectCoins() {
     const currentTime = Date.now();
@@ -17,10 +17,10 @@ function collectCoins() {
         localStorage.setItem('lastClickTime', lastClickTime);
     }
 
-    if (clicks < 100) {
+    if (clicks < 10000) { // Увеличен максимальный счетчик до 10000
         coins += 1;
         clicks += 1;
-        document.getElementById('coinCount').innerText = 'Coins: ' + coins;
+        document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
         localStorage.setItem('coins', coins);
         localStorage.setItem('clicks', clicks);
 
@@ -31,8 +31,8 @@ function collectCoins() {
         // Возврат к исходному изображению после небольшой задержки
         setTimeout(() => {
             image.src = 'https://i.postimg.cc/wBDHJRZk/83ffb5.png';
-        }, 100);
+        }, 50); // Быстрее обрабатывает нажатие
     } else {
-        alert('You have reached the maximum number of clicks for today.');
+        alert('Вы достигли максимального количества кликов за 24 часа.');
     }
 }
