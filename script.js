@@ -1,10 +1,49 @@
-let coins = localStorage.getItem('coins') ? parseInt(localStorage.getItem('coins')) : 0;
-let clicks = localStorage.getItem('clicks') ? parseInt(localStorage.getItem('clicks')) : 0;
+let userId = null;
+let userProgress = {};
+
+async function getUserId() {
+    const response = await fetch('https://api.telegram.org/bot<TOKEN>/getMe');
+    const data = await response.json();
+    return data.result.id;
+}
+
+async function loadProgress() {
+    userId = await getUserId();
+    const storedProgress = localStorage.getItem('userProgress');
+    if (storedProgress) {
+        userProgress = JSON.parse(storedProgress);
+    }
+
+    if (userProgress[userId]) {
+        coins = userProgress[userId].coins;
+        clicks = userProgress[userId].clicks;
+        lastClickTime = userProgress[userId].lastClickTime;
+    } else {
+        coins = 0;
+        clicks = 0;
+        lastClickTime = Date.now();
+    }
+
+    document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
+}
+
+function saveProgress() {
+    if (!userId) return;
+    userProgress[userId] = {
+        coins: coins,
+        clicks: clicks,
+        lastClickTime: lastClickTime
+    };
+    localStorage.setItem('userProgress', JSON.stringify(userProgress));
+}
+
+let coins = 0;
+let clicks = 0;
 
 const resetTime = 24 * 60 * 60 * 1000; // 24 часа в миллисекундах
-let lastClickTime = localStorage.getItem('lastClickTime') ? parseInt(localStorage.getItem('lastClickTime')) : Date.now();
+let lastClickTime = Date.now();
 
-document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
+document.addEventListener('DOMContentLoaded', loadProgress);
 
 function collectCoins(event) {
     const currentTime = Date.now();
@@ -12,20 +51,18 @@ function collectCoins(event) {
     // Если прошло больше 24 часов с последнего клика, сбрасываем счетчик кликов
     if (currentTime - lastClickTime > resetTime) {
         clicks = 0;
-        localStorage.setItem('clicks', clicks);
         lastClickTime = currentTime;
-        localStorage.setItem('lastClickTime', lastClickTime);
     }
 
     // Определяем количество нажатий при мульти-нажатии
     const touchCount = event.touches ? event.touches.length : 1;
+    const maxTouches = Math.min(touchCount, 10); // Максимум 10 точек касания
 
-    if (clicks < 10000) { // Увеличен максимальный счетчик до 10000
-        coins += touchCount;
-        clicks += touchCount;
+    if (clicks + maxTouches <= 10000) { // Увеличен максимальный счетчик до 10000
+        coins += maxTouches;
+        clicks += maxTouches;
         document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
-        localStorage.setItem('coins', coins);
-        localStorage.setItem('clicks', clicks);
+        saveProgress();
 
         // Анимация изменения изображения
         let image = document.getElementById('clickerImage');
