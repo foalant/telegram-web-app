@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Telegram Web App Clicker</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Проверяем, если устройство не мобильное, перенаправляем на другую страницу
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            document.write("This application is only available on mobile devices.");
+        }
+    </script>
 </head>
 <body>
     <div class="container">
