@@ -54,12 +54,10 @@ function collectCoins(event) {
         lastClickTime = currentTime;
     }
 
-    // Определяем количество нажатий при мульти-нажатии
-    const touchCount = event.touches ? event.touches.length : 1;
-
-    if (clicks + touchCount <= 10000) { // Увеличен максимальный счетчик до 10000
-        coins += touchCount;
-        clicks += touchCount;
+    // Прибавляем только 1 за одно нажатие
+    if (clicks + 1 <= 10000) { // Увеличен максимальный счетчик до 10000
+        coins += 1;
+        clicks += 1;
         document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
         saveProgress();
 
