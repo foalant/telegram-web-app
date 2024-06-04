@@ -2,7 +2,8 @@ let userId = null;
 let userProgress = {};
 
 async function getUserId() {
-    const response = await fetch('https://api.telegram.org/bot<TOKEN>/getMe');
+    // Получаем userId из Telegram через API
+    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/getMe`);
     const data = await response.json();
     return data.result.id;
 }
@@ -56,11 +57,10 @@ function collectCoins(event) {
 
     // Определяем количество нажатий при мульти-нажатии
     const touchCount = event.touches ? event.touches.length : 1;
-    const maxTouches = Math.min(touchCount, 10); // Максимум 10 точек касания
 
-    if (clicks + maxTouches <= 10000) { // Увеличен максимальный счетчик до 10000
-        coins += maxTouches;
-        clicks += maxTouches;
+    if (clicks + touchCount <= 10000) { // Увеличен максимальный счетчик до 10000
+        coins += touchCount;
+        clicks += touchCount;
         document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
         saveProgress();
 
