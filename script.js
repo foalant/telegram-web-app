@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Web App Clicker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Clicker Game</h1>
-        <p id="coinCount">Coins: 0</p>
-        <img id="clickerImage" src="https://i.postimg.cc/wBDHJRZk/83ffb5.png" alt="Clicker" onclick="collectCoins()">
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+let coins = 0;
+
+function collectCoins() {
+    coins += 1;
+    document.getElementById('coinCount').innerText = 'Coins: ' + coins;
+
+    // Анимация изменения изображения
+    let image = document.getElementById('clickerImage');
+    image.src = 'https://sun9-69.userapi.com/sun9-73/mB_jNmfFUOZUF9RpG1Hx2AIftxKBO879DCEcYw/XsskELnUErI.jpg';
+
+    // Возврат к исходному изображению после небольшой задержки
+    setTimeout(() => {
+        image.src = 'https://i.postimg.cc/wBDHJRZk/83ffb5.png';
+    }, 100);
+}
