@@ -6,7 +6,7 @@ let lastClickTime = localStorage.getItem('lastClickTime') ? parseInt(localStorag
 
 document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
 
-function collectCoins() {
+function collectCoins(event) {
     const currentTime = Date.now();
 
     // Если прошло больше 24 часов с последнего клика, сбрасываем счетчик кликов
@@ -17,9 +17,12 @@ function collectCoins() {
         localStorage.setItem('lastClickTime', lastClickTime);
     }
 
+    // Определяем количество нажатий при мульти-нажатии
+    const touchCount = event.touches ? event.touches.length : 1;
+
     if (clicks < 10000) { // Увеличен максимальный счетчик до 10000
-        coins += 1;
-        clicks += 1;
+        coins += touchCount;
+        clicks += touchCount;
         document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
         localStorage.setItem('coins', coins);
         localStorage.setItem('clicks', clicks);
@@ -31,8 +34,4 @@ function collectCoins() {
         // Возврат к исходному изображению после небольшой задержки
         setTimeout(() => {
             image.src = 'https://i.postimg.cc/wBDHJRZk/83ffb5.png';
-        }, 50); // Быстрее обрабатывает нажатие
-    } else {
-        alert('Вы достигли максимального количества кликов за 24 часа.');
-    }
-}
+        }, 50); // Быстрее обрабатывает на
