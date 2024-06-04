@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url('https://s.rbk.ru/v1_companies_s3/resized/960xH/media/trademarks/5a1210ef-5aff-4c90-9ec4-076f3d0242e8.jpg');
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/78867069730877.5b915685be523.jpg');
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -17,8 +17,12 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
-    max-width: 90%;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #coinCount {
@@ -27,8 +31,7 @@ body {
 }
 
 #clickerImage {
-    width: 80%;
-    max-width: 200px;
+    width: 200px;
     height: auto;
     cursor: pointer;
     transition: transform 0.1s;
