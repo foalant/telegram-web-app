@@ -1,8 +1,22 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 50px;
-    background-color: #f0f0f0;
+    background-image: url('https://s.rbk.ru/v1_companies_s3/resized/960xH/media/trademarks/5a1210ef-5aff-4c90-9ec4-076f3d0242e8.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #coinCount {
