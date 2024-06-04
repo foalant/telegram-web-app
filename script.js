@@ -34,4 +34,12 @@ function collectCoins(event) {
         // Возврат к исходному изображению после небольшой задержки
         setTimeout(() => {
             image.src = 'https://i.postimg.cc/wBDHJRZk/83ffb5.png';
-        }, 50); // Быстрее обрабатывает на
+        }, 50); // Быстрее обрабатывает нажатие
+    } else {
+        alert('Вы достигли максимального количества кликов за 24 часа.');
+    }
+}
+
+// Добавляем поддержку мульти-нажатий для сенсорных устройств
+document.getElementById('clickerImage').addEventListener('touchstart', collectCoins);
+document.getElementById('clickerImage').addEventListener('mousedown', collectCoins);
