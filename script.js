@@ -2,10 +2,9 @@ let userId = null;
 let userProgress = {};
 
 async function getUserId() {
-    // Получаем userId из Telegram через API
-    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/getMe`);
-    const data = await response.json();
-    return data.result.id;
+    // Получаем userId из Telegram через URL параметр
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('user_id');
 }
 
 async function loadProgress() {
