@@ -78,7 +78,3 @@ function collectCoins(event) {
 
 // Добавляем поддержку мульти-нажатий для сенсорных устройств
 document.getElementById('clickerImage').addEventListener('touchstart', collectCoins);
-document.getElementById('clickerImage').addEventListener('mousedown', (event) => {
-    if (event.touches && event.touches.length > 0) return;
-    collectCoins(event);
-});
