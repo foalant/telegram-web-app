@@ -29,14 +29,14 @@ body {
 
 h1 {
     font-size: 3em; /* Увеличен размер шрифта */
-    margin-top: 20px; /* Поднята надпись выше */
+    margin-top: 10px; /* Поднята надпись выше */
     color: #333;
     font-family: 'Verdana', sans-serif; /* Более привлекательный шрифт */
 }
 
 #coinCount {
     font-size: 2.5em; /* Увеличен размер шрифта */
-    margin-top: 20px; /* Поднята надпись выше */
+    margin-top: 10px; /* Поднята надпись выше */
     margin-bottom: 20px;
     color: #333;
 }
@@ -46,7 +46,7 @@ h1 {
     height: auto;
     cursor: pointer;
     transition: transform 0.05s; /* Быстрее обрабатывает нажатие */
-    margin-top: 50px; /* Опущена иконка ниже */
+    margin-top: 100px; /* Опущена иконка ниже */
 }
 
 #clickerImage:active {
