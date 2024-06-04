@@ -46,7 +46,9 @@ h1 {
     height: auto;
     cursor: pointer;
     transition: transform 0.05s;
-    margin-top: 20px; /* Поднята иконка выше */
+    margin-top: auto;
+    position: absolute;
+    bottom: 25%; /* Центр картинки на середине нижней половины экрана */
 }
 
 #clickerImage:active {
