@@ -7,15 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="mainScreen">
         <h1>Colizeum Token</h1>
-        <p id="coinCount">Монеты: 0</p>
-        <img id="clickerImage" src="https://i.postimg.cc/wBDHJRZk/83ffb5.png" alt="Clicker" ontouchstart="collectCoins(event)">
+        <p id="coinCount" class="styled-text">Монеты: 0</p>
+        <img id="clickerImage" src="https://i.postimg.cc/wBDHJRZk/83ffb5.png" alt="Clicker" onclick="collectCoins()">
         <div class="buttons">
-            <button class="btn" id="bonusButton">Бонусы</button>
-            <button class="btn" id="promoButton">Промокоды</button>
+            <button class="btn" id="bonusButton" onclick="showBonusScreen()">Бонусы</button>
+            <button class="btn" id="promoButton" onclick="showPromoScreen()">Промокоды</button>
         </div>
     </div>
+
+    <div class="container hidden" id="bonusScreen">
+        <h1>Colizeum Token</h1>
+        <p class="styled-text">Бонусы</p>
+        <button class="back-btn" onclick="showMainScreen()">Назад</button>
+    </div>
+
+    <div class="container hidden" id="promoScreen">
+        <h1>Colizeum Token</h1>
+        <p class="styled-text">Промокоды</p>
+        <button class="back-btn" onclick="showMainScreen()">Назад</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
