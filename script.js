@@ -45,7 +45,7 @@ let lastClickTime = Date.now();
 
 document.addEventListener('DOMContentLoaded', loadProgress);
 
-function collectCoins(event) {
+function collectCoins() {
     const currentTime = Date.now();
 
     // Если прошло больше 24 часов с последнего клика, сбрасываем счетчик кликов
@@ -74,5 +74,18 @@ function collectCoins(event) {
     }
 }
 
-// Добавляем поддержку мульти-нажатий для сенсорных устройств
-document.getElementById('clickerImage').addEventListener('touchstart', collectCoins);
+function showBonusScreen() {
+    document.getElementById('mainScreen').classList.add('hidden');
+    document.getElementById('bonusScreen').classList.remove('hidden');
+}
+
+function showPromoScreen() {
+    document.getElementById('mainScreen').classList.add('hidden');
+    document.getElementById('promoScreen').classList.remove('hidden');
+}
+
+function showMainScreen() {
+    document.getElementById('bonusScreen').classList.add('hidden');
+    document.getElementById('promoScreen').classList.add('hidden');
+    document.getElementById('mainScreen').classList.remove('hidden');
+}
