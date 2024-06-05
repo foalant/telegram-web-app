@@ -47,9 +47,26 @@ h1 {
     cursor: pointer;
     transition: transform 0.05s;
     position: absolute;
-    bottom: 10%; /* Центр картинки на середине нижней половины экрана */
+    bottom: 15%; /* Опущена картинка */
 }
 
 #clickerImage:active {
     transform: scale(0.95);
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 45%;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1.2em;
+    cursor: pointer;
 }
