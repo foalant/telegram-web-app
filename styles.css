@@ -27,6 +27,10 @@ body {
     top: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 h1 {
     font-size: 3em;
     margin-top: 10px; /* Поднята надпись выше */
@@ -34,9 +38,17 @@ h1 {
     font-family: 'Verdana', sans-serif;
 }
 
-#coinCount {
+.styled-text {
     font-size: 2.5em;
     margin-top: 20px; /* Поднята надпись пропорционально */
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Verdana', sans-serif;
+}
+
+#coinCount {
+    font-size: 2.5em;
+    margin-top: 20px;
     margin-bottom: 20px;
     color: #333;
 }
@@ -47,7 +59,7 @@ h1 {
     cursor: pointer;
     transition: transform 0.05s;
     position: absolute;
-    bottom: 15%; /* Опущена картинка */
+    bottom: 25%;
 }
 
 #clickerImage:active {
@@ -57,16 +69,27 @@ h1 {
 .buttons {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     margin-top: 20px;
 }
 
 .btn {
-    width: 45%;
-    padding: 10px;
+    width: 50%;
+    padding: 20px 0; /* Увеличена высота кнопок */
     border: 2px solid #333;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: white;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Используется тот же шрифт, что и у надписи Colizeum Token */
+    font-family: 'Verdana', sans-serif;
+    cursor: pointer;
+}
+
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1.5em;
+    font-family: 'Verdana', sans-serif;
     cursor: pointer;
 }
