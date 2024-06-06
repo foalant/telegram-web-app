@@ -24,7 +24,7 @@ async function loadProgress() {
         lastClickTime = Date.now();
     }
 
-    document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
+    document.getElementById('coinCount').innerText = 'C-Tokens: ' + coins;
 }
 
 function saveProgress() {
@@ -58,7 +58,7 @@ function collectCoins() {
     if (clicks + 1 <= 10000) {
         coins += 1;
         clicks += 1;
-        document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
+        document.getElementById('coinCount').innerText = 'C-Tokens: ' + coins;
         saveProgress();
 
         let image = document.getElementById('clickerImage');
