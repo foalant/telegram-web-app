@@ -33,14 +33,14 @@ body {
 
 h1 {
     font-size: 3em;
-    margin-top: 10px; /* Поднята надпись выше */
+    margin-top: 10px;
     color: #333;
     font-family: 'Verdana', sans-serif;
 }
 
 .styled-text {
     font-size: 2.5em;
-    margin-top: 20px; /* Поднята надпись пропорционально */
+    margin-top: 20px;
     margin-bottom: 20px;
     color: #333;
     font-family: 'Verdana', sans-serif;
@@ -55,13 +55,13 @@ h1 {
 
 #clickerImage {
     width: 200px;
-    height: auto;
+    height: 200px;
     cursor: pointer;
-    border: 2px solid #888; /* Добавление серой окантовки */
-    border-radius: 10px;
     transition: transform 0.05s;
     position: absolute;
     bottom: 25%;
+    border: 2px solid #808080; /* Серый цвет окантовки */
+    border-radius: 50%; /* Круглая форма */
 }
 
 #clickerImage:active {
@@ -71,13 +71,14 @@ h1 {
 .buttons {
     width: 100%;
     display: flex;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
 .btn {
-    width: 50%;
+    width: 30%; /* Уменьшена ширина кнопок, чтобы вместить три кнопки */
     padding: 20px 0; /* Увеличена высота кнопок */
-    border: 2px solid #333;
+    border: 2px solid #808080; /* Серый цвет окантовки */
     border-radius: 10px;
     background-color: white;
     font-size: 1.5em; /* Используется тот же шрифт, что и у надписи Colizeum Token */
@@ -88,7 +89,7 @@ h1 {
 .back-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    border: 2px solid #333;
+    border: 2px solid #808080; /* Серый цвет окантовки */
     border-radius: 10px;
     background-color: white;
     font-size: 1.5em;
