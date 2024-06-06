@@ -65,7 +65,7 @@ function collectCoins() {
         image.src = bufferImage.src;
 
         setTimeout(() => {
-            image.src = 'https://i.ibb.co/7bF7FzJ/round-image.png';
+            image.src = 'https://i.ibb.co/gTpR0hn/83ffb5.png';
         }, 50);
     } else {
         alert('Вы достигли максимального количества кликов за 24 часа.');
