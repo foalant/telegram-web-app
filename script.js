@@ -60,15 +60,6 @@ function collectCoins() {
         clicks += 1;
         document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
         saveProgress();
-
-        // Анимация изменения изображения
-        let image = document.getElementById('clickerImage');
-        image.src = 'https://sun9-69.userapi.com/sun9-73/mB_jNmfFUOZUF9RpG1Hx2AIftxKBO879DCEcYw/XsskELnUErI.jpg';
-
-        // Возврат к исходному изображению после небольшой задержки
-        setTimeout(() => {
-            image.src = 'https://i.postimg.cc/wBDHJRZk/83ffb5.png';
-        }, 50); // Быстрее обрабатывает нажатие
     } else {
         alert('Вы достигли максимального количества кликов за 24 часа.');
     }
@@ -88,4 +79,8 @@ function showMainScreen() {
     document.getElementById('bonusScreen').classList.add('hidden');
     document.getElementById('promoScreen').classList.add('hidden');
     document.getElementById('mainScreen').classList.remove('hidden');
+}
+
+function changeImage(img, src) {
+    img.src = src;
 }
