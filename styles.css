@@ -51,6 +51,8 @@ h1 {
     height: 1em;
     vertical-align: middle;
     margin-left: 5px;
+    border: 1px solid #808080; /* Тонкая серая окантовка */
+    border-radius: 50%; /* Круглая форма */
 }
 
 #coinCount {
@@ -85,8 +87,8 @@ h1 {
 .btn {
     width: 30%;
     padding: 20px 0;
-    border: 6px solid #808080; /* Серый цвет окантовки, увеличенная толщина */
-    border-radius: 50%; /* Круглая форма */
+    border: 2px solid #808080; /* Серый цвет окантовки */
+    border-radius: 10px; /* Скругленные края */
     background-color: white;
     font-size: 1.5em;
     font-family: 'Verdana', sans-serif;
@@ -101,8 +103,8 @@ h1 {
 .back-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    border: 6px solid #808080; /* Серый цвет окантовки, увеличенная толщина */
-    border-radius: 50%; /* Круглая форма */
+    border: 2px solid #808080; /* Серый цвет окантовки */
+    border-radius: 10px; /* Скругленные края */
     background-color: white;
     font-size: 1.5em;
     font-family: 'Verdana', sans-serif;
