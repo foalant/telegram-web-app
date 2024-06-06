@@ -1,8 +1,8 @@
 let userId = null;
 let userProgress = {};
+let bufferImage = new Image();
 
 async function getUserId() {
-    // Получаем userId из Telegram через URL параметр
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('user_id');
 }
@@ -40,29 +40,41 @@ function saveProgress() {
 let coins = 0;
 let clicks = 0;
 
-const resetTime = 24 * 60 * 60 * 1000; // 24 часа в миллисекундах
+const resetTime = 24 * 60 * 60 * 1000;
 let lastClickTime = Date.now();
 
 document.addEventListener('DOMContentLoaded', loadProgress);
 
+bufferImage.src = 'https://i.ibb.co/FXmNLCn/83ffb5-1.png';
+
 function collectCoins() {
     const currentTime = Date.now();
 
-    // Если прошло больше 24 часов с последнего клика, сбрасываем счетчик кликов
     if (currentTime - lastClickTime > resetTime) {
         clicks = 0;
         lastClickTime = currentTime;
     }
 
-    // Прибавляем только 1 за одно нажатие
-    if (clicks + 1 <= 10000) { // Увеличен максимальный счетчик до 10000
+    if (clicks + 1 <= 10000) {
         coins += 1;
         clicks += 1;
         document.getElementById('coinCount').innerText = 'Монеты: ' + coins;
         saveProgress();
+
+        let image = document.getElementById('clickerImage');
+        image.src = bufferImage.src;
+
+        setTimeout(() => {
+            image.src = 'https://i.ibb.co/gTpR0hn/83ffb5.png';
+        }, 50);
     } else {
         alert('Вы достигли максимального количества кликов за 24 часа.');
     }
+}
+
+function showUpgradeScreen() {
+    document.getElementById('mainScreen').classList.add('hidden');
+    document.getElementById('upgradeScreen').classList.remove('hidden');
 }
 
 function showBonusScreen() {
@@ -76,11 +88,8 @@ function showPromoScreen() {
 }
 
 function showMainScreen() {
+    document.getElementById('upgradeScreen').classList.add('hidden');
     document.getElementById('bonusScreen').classList.add('hidden');
     document.getElementById('promoScreen').classList.add('hidden');
     document.getElementById('mainScreen').classList.remove('hidden');
-}
-
-function changeImage(img, src) {
-    img.src = src;
 }
