@@ -45,7 +45,7 @@ let lastClickTime = Date.now();
 
 document.addEventListener('DOMContentLoaded', loadProgress);
 
-bufferImage.src = 'https://i.ibb.co/gTpR0hn/83ffb5.png';
+bufferImage.src = 'https://i.ibb.co/FXmNLCn/83ffb5-1.png';
 
 function collectCoins() {
     const currentTime = Date.now();
