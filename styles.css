@@ -46,6 +46,13 @@ h1 {
     font-family: 'Verdana', sans-serif;
 }
 
+.coin-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
 #coinCount {
     font-size: 2.5em;
     margin-top: 20px;
@@ -60,7 +67,7 @@ h1 {
     transition: transform 0.05s;
     position: absolute;
     bottom: 25%;
-    border: 2px solid #808080; /* Серый цвет окантовки */
+    border: 6px solid #808080; /* Серый цвет окантовки, увеличенная толщина */
     border-radius: 50%; /* Круглая форма */
 }
 
@@ -76,21 +83,26 @@ h1 {
 }
 
 .btn {
-    width: 30%; /* Уменьшена ширина кнопок, чтобы вместить три кнопки */
-    padding: 20px 0; /* Увеличена высота кнопок */
-    border: 2px solid #808080; /* Серый цвет окантовки */
-    border-radius: 10px;
+    width: 30%;
+    padding: 20px 0;
+    border: 6px solid #808080; /* Серый цвет окантовки, увеличенная толщина */
+    border-radius: 50%; /* Круглая форма */
     background-color: white;
-    font-size: 1.5em; /* Используется тот же шрифт, что и у надписи Colizeum Token */
+    font-size: 1.5em;
     font-family: 'Verdana', sans-serif;
     cursor: pointer;
+    outline: none;
+}
+
+.btn:focus {
+    outline: none;
 }
 
 .back-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    border: 2px solid #808080; /* Серый цвет окантовки */
-    border-radius: 10px;
+    border: 6px solid #808080; /* Серый цвет окантовки, увеличенная толщина */
+    border-radius: 50%; /* Круглая форма */
     background-color: white;
     font-size: 1.5em;
     font-family: 'Verdana', sans-serif;
