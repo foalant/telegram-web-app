@@ -57,6 +57,8 @@ h1 {
     width: 200px;
     height: auto;
     cursor: pointer;
+    border: 2px solid #888; /* Добавление серой окантовки */
+    border-radius: 10px;
     transition: transform 0.05s;
     position: absolute;
     bottom: 25%;
