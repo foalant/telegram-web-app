@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -70,7 +69,7 @@ h1 {
     cursor: pointer;
     transition: transform 0.05s;
     position: absolute;
-    bottom: 25%;
+    bottom: 20%; /* Сдвиг вниз */
     border: 6px solid #808080; /* Серый цвет окантовки, увеличенная толщина */
     border-radius: 50%; /* Круглая форма */
 }
@@ -91,7 +90,7 @@ h1 {
     padding: 20px 0;
     border: 2px solid #808080; /* Серый цвет окантовки */
     border-radius: 10px; /* Скругленные края */
-    background: linear-gradient(to bottom, #b3d9ff, #80bfff); /* Легкий синий градиент */
+    background: linear-gradient(to bottom, #4c669f, #3b5998); /* Темный синий градиент */
     font-size: 1.5em;
     font-family: 'Verdana', sans-serif;
     cursor: pointer;
@@ -107,7 +106,7 @@ h1 {
     padding: 10px 20px;
     border: 2px solid #808080; /* Серый цвет окантовки */
     border-radius: 10px; /* Скругленные края */
-    background: linear-gradient(to bottom, #b3d9ff, #80bfff); /* Легкий синий градиент */
+    background: linear-gradient(to bottom, #4c669f, #3b5998); /* Темный синий градиент */
     font-size: 1.5em;
     font-family: 'Verdana', sans-serif;
     cursor: pointer;
